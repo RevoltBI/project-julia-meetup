@@ -1,0 +1,6 @@
+authors = ["František Navrkal <F.Navrkal@gmail.com>"]
+name = "Julia-Meetup"
+uuid = "22561f4a-cf28-11e8-1eb3-f90fc9a892f8"
+version = "0.1.0"
+
+[deps]
