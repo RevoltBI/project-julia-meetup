@@ -4,8 +4,9 @@
 
 using DataFrames, CSV, DataFramesMeta, Hose, Statistics, StatsBase
 # import Base.Meta.@dump
+dir = @__DIR__
 
-hflights = CSV.File("data/hflights.csv", missingstring="NA") |> DataFrame
+hflights = CSV.File(dir * "/../data/hflights.csv", missingstring="NA") |> DataFrame
 
 # size(hflights)
 # names(hflights)
@@ -19,6 +20,7 @@ hflights = CSV.File("data/hflights.csv", missingstring="NA") |> DataFrame
 # macro sample(df, q::Real)
 #     esc(:($df[sample(1:nrow($df), round(Int, $q * nrow($df))), :]))
 # end
+
 @hose hflights |>
     # @sample(.4) |>
     @transform(Speed = :Distance ./ :AirTime .* 60) |>
