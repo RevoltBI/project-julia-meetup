@@ -1,1 +1,5 @@
-  0.102692 seconds (611.24 k allocations: 39.243 MiB, 7.14% gc time)
+Stats:
+- Libraries loading time: 10.776628534 s,
+- CSV file loading time: 2.085118306 s,
+- Compilation time: 3.145934213 s,
+- Mean execution time after compilation (with GC): 0.035711741000000005 s.
