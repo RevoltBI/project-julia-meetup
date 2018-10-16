@@ -13,9 +13,9 @@ file_load_time = @elapsed const hflights = CSV.File(dir * "/../data/hflights.csv
 # head(hflights)
 # describe(hflights)
 
-macro sample(df, n::Int)
-    esc(:($df[sample(1:nrow($df), $n), :]))
-end
+# macro sample(df, n::Int)
+#     esc(:($df[sample(1:nrow($df), $n), :]))
+# end
 
 # macro sample(df, q::Real)
 #     esc(:($df[sample(1:nrow($df), round(Int, $q * nrow($df))), :]))
@@ -23,7 +23,6 @@ end
 
 function process(df)
     @hose df |>
-    # @sample(.4) |>
     @transform(Speed = :Distance ./ :AirTime .* 60) |>
     @select(:Month, :ArrDelay, :Speed) |>
     dropmissing |>
@@ -49,10 +48,17 @@ end
 
 mean_time = mean(times)
 
+process_strrev(df) = @hose df |> @transform(TailNum2=reverse.(:TailNum))
+
+string_reversal_compile_time = @elapsed process_strrev(hflights)
+string_reversal_time = @elapsed process_strrev(hflights)
+
 println("""Stats:
 - Libraries loading time: $lib_load_time s,
 - CSV file loading time: $file_load_time s,
 - Compilation time: $compile_time s,
-- Mean execution time after compilation (with GC): $mean_time s.""")
+- Mean execution time after compilation (with GC): $mean_time s,
+- String reversal compillation time: $string_reversal_compile_time s,
+- String reversal execution time: $string_reversal_time s.""")
 
 # - Mean execution time after compilation (without GC): $mean_time_no_GC s.

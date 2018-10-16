@@ -8,6 +8,7 @@ hflights = pd.read_csv("data/hflights.csv")
 def dropna(df, *args, **kwargs):
     return df.dropna()
 
+
 N = 10
 start_time = time.time()
 
@@ -19,4 +20,8 @@ for i in range(N):
         group_by(X.Month) >>
         summarize(AvgDelay = mean(X.ArrDelay), MaxSpeed = colmax(X.Speed)))
 
-print("Execution time: %s s." % ((time.time() - start_time) / N))
+print("Mean group by execution time: %s s." % ((time.time() - start_time) / N))
+
+start_time = time.time()
+hflights["RevTailNum"] = hflights["TailNum"].apply(lambda s: str(s)[::-1])
+print("Mean string reversal execution time: %s s." % ((time.time() - start_time)))

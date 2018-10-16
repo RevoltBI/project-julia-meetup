@@ -1,5 +1,7 @@
 Stats:
-- Libraries loading time: 10.85612593 s,
-- CSV file loading time: 2.106137148 s,
-- Compilation time: 3.151337668 s,
-- Mean execution time after compilation (with GC): 0.035509063400000006 s.
+- Libraries loading time: 17.952321347 s,
+- CSV file loading time: 2.818667646 s,
+- Compilation time: 4.327449185 s,
+- Mean execution time after compilation (with GC): 0.0469394338 s,
+- String reversal compillation time: 0.175222866 s,
+- String reversal execution time: 0.0526855 s.

@@ -1,1 +1,6 @@
-Time difference of 0.03719199 secs
+[1] "Group by time: "
+   user  system elapsed 
+ 0.0467  0.0010  0.0476 
+[1] "String reverse time: "
+   user  system elapsed 
+  1.084   0.004   1.088 
