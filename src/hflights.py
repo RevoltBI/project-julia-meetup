@@ -17,8 +17,6 @@ for i in range(N):
         select(X.Month, X.ArrDelay, X.Speed) >>
         dropna() >>
         group_by(X.Month) >>
-        mutate(AvgDelay = mean(X.ArrDelay), MaxSpeed = colmax(X.Speed)) >>
-        select(X.Month, X.AvgDelay, X.MaxSpeed) >> head(1))
+        summarize(AvgDelay = mean(X.ArrDelay), MaxSpeed = colmax(X.Speed)))
 
 print("Execution time: %s s." % ((time.time() - start_time) / N))
-# @by(:Month, AvgDelay = mean(:ArrDelay), MaxSpeed = maximum(:Speed)))

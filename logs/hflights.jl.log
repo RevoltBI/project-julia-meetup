@@ -1,5 +1,5 @@
 Stats:
-- Libraries loading time: 10.776628534 s,
-- CSV file loading time: 2.085118306 s,
-- Compilation time: 3.145934213 s,
-- Mean execution time after compilation (with GC): 0.035711741000000005 s.
+- Libraries loading time: 10.85612593 s,
+- CSV file loading time: 2.106137148 s,
+- Compilation time: 3.151337668 s,
+- Mean execution time after compilation (with GC): 0.035509063400000006 s.
