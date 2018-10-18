@@ -6,6 +6,7 @@ lib_load_time = @elapsed using DataFrames, CSV, DataFramesMeta, Hose, Statistics
 # import Base.Meta.@dump
 const dir = @__DIR__
 
+file_load_compilation_time = @elapsed CSV.File(dir * "/../data/hflights.csv", missingstring="NA") |> DataFrame
 file_load_time = @elapsed const hflights = CSV.File(dir * "/../data/hflights.csv", missingstring="NA") |> DataFrame
 
 # size(hflights)
@@ -55,10 +56,11 @@ string_reversal_time = @elapsed process_strrev(hflights)
 
 println("""Stats:
 - Libraries loading time: $lib_load_time s,
-- CSV file loading time: $file_load_time s,
-- Compilation time: $compile_time s,
-- Mean execution time after compilation (with GC): $mean_time s,
-- String reversal compillation time: $string_reversal_compile_time s,
+- File loading compilation time: $file_load_compilation_time s,
+- File loading time: $file_load_time s,
+- Group by compilation time: $compile_time s,
+- Group by execution time: $mean_time s,
+- String reversal compilation time: $string_reversal_compile_time s,
 - String reversal execution time: $string_reversal_time s.""")
 
 # - Mean execution time after compilation (without GC): $mean_time_no_GC s.

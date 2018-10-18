@@ -1,6 +1,7 @@
-suppressMessages(library(dplyr))
-
-hflights <- read.csv("data/hflights.csv")
+print("Library loading time: ")
+print(system.time(suppressMessages(library(dplyr))))
+print("Data loading time: ")
+print(system.time(hflights <- read.csv("data/hflights.csv")))
 fctr.cols <- sapply(hflights, is.factor)
 hflights[, fctr.cols] <- sapply(hflights[, fctr.cols], as.character)
 N = 10

@@ -1,9 +1,14 @@
+import time
+import numba
+start_time = time.time()
 import pandas as pd
 from dfply import *
-import time
+print("Library loading time: %s s." % ((time.time() - start_time)))
 
+
+start_time = time.time()
 hflights = pd.read_csv("data/hflights.csv")
-
+print("Data loading time: %s s." % ((time.time() - start_time)))
 @dfpipe
 def dropna(df, *args, **kwargs):
     return df.dropna()
@@ -24,4 +29,4 @@ print("Mean group by execution time: %s s." % ((time.time() - start_time) / N))
 
 start_time = time.time()
 hflights["RevTailNum"] = hflights["TailNum"].apply(lambda s: str(s)[::-1])
-print("Mean string reversal execution time: %s s." % ((time.time() - start_time)))
+print("String reversal execution time: %s s." % ((time.time() - start_time)))

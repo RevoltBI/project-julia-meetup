@@ -1,0 +1,9 @@
+[1] "Library loading time: "
+   user  system elapsed 
+  0.275   0.019   0.397 
+[1] "Data loading time: "
+   user  system elapsed 
+  5.545   0.233   5.852 
+[1] "Group by time: "
+   user  system elapsed 
+ 0.1079  0.0000  0.1086 
