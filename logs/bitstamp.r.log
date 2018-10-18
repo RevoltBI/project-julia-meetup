@@ -1,9 +1,9 @@
 [1] "Library loading time: "
    user  system elapsed 
-  0.275   0.019   0.397 
+  0.221   0.016   0.289 
 [1] "Data loading time: "
    user  system elapsed 
-  5.545   0.233   5.852 
+  5.395   0.190   5.619 
 [1] "Group by time: "
    user  system elapsed 
- 0.1079  0.0000  0.1086 
+ 0.1052  0.0000  0.1060 

@@ -1,0 +1,6 @@
+Stats:
+- Libraries loading time: 18.072575204 s,
+- File loading compilation time: 5.086671458 s,
+- File loading time: 2.915021559 s,
+- Group by compilation time: 3.91436186 s,
+- Group by execution time: 0.30257889250000003 s.

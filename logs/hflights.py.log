@@ -1,4 +1,4 @@
-Library loading time: 0.4517698287963867 s.
-Data loading time: 0.4940147399902344 s.
-Mean group by execution time: 0.11332566738128662 s.
-String reversal execution time: 0.07490396499633789 s.
+Library loading time: 0.2058558464050293 s.
+Data loading time: 0.3907599449157715 s.
+Mean group by execution time: 0.11209743022918701 s.
+String reversal execution time: 0.0750117301940918 s.
