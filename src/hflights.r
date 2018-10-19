@@ -1,4 +1,4 @@
-print("Library loading time: ")
+print("Libraries loading time: ")
 print(system.time(suppressMessages(library(dplyr))))
 print("Data loading time: ")
 print(system.time(hflights <- read.csv("data/hflights.csv")))

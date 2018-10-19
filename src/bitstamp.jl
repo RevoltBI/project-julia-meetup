@@ -4,12 +4,14 @@
 
 lib_load_time = @elapsed using DataFrames, CSV, DataFramesMeta, Hose, Statistics, StatsBase, Dates
 # import Base.Meta.@dump
-const dir = @__DIR__
+# const dir = @__DIR__
 
 file_load_compilation_time = @elapsed CSV.File("data/bitstamp.csv", missingstring="NA") |> DataFrame
 file_load_time = @elapsed const bitstamp = CSV.File("data/bitstamp.csv", missingstring="NA") |> DataFrame
 
-size(bitstamp, 1) / 227496
+file_load_compilation_time -= file_load_time
+
+# size(bitstamp, 1) / 227496
 # names(hflights)
 # head(hflights)
 # describe(hflights)
@@ -22,7 +24,13 @@ size(bitstamp, 1) / 227496
 #     esc(:($df[sample(1:nrow($df), round(Int, $q * nrow($df))), :]))
 # end
 
-const bitstamp_dt = @hose bitstamp |> @transform(Datetime = Dates.unix2datetime.(:Timestamp)) |> @transform(YearMonth = Dates.yearmonth.(:Datetime))
+function preprocess(df)
+    @hose df |> @transform(Datetime = Dates.unix2datetime.(:Timestamp)) |> @transform(YearMonth = Dates.yearmonth.(:Datetime))
+end
+
+preprocess_compilation_time = @elapsed preprocess(bitstamp)
+preprocess_exec_time = @elapsed const bitstamp_dt = preprocess(bitstamp)
+preprocess_compilation_time -= preprocess_exec_time
 
 # describe(bitstamp_dt)
 
@@ -34,7 +42,7 @@ function process(df)
     @by(:YearMonth, AvgClose = mean(:Close), MaxHigh = maximum(:High))
 end
 
-compile_time = @elapsed process(bitstamp_dt[1:5, :])
+process_compile_time = @elapsed process(bitstamp_dt[1:5, :])
 const N = 10
 times = zeros(N)
 # GC.enable(false)
@@ -51,8 +59,8 @@ for i=1:N
     times[i] = @elapsed process(bitstamp_dt)
 end
 
-mean_time = mean(times)
-
+process_exec_time = mean(times)
+process_compile_time -= process_exec_time
 # process_strrev(df) = @hose df |> @transform(TailNum2=reverse.(:TailNum))
 #
 # string_reversal_compile_time = @elapsed process_strrev(hflights)
@@ -62,7 +70,19 @@ println("""Stats:
 - Libraries loading time: $lib_load_time s,
 - File loading compilation time: $file_load_compilation_time s,
 - File loading time: $file_load_time s,
-- Group by compilation time: $compile_time s,
-- Group by execution time: $mean_time s.""")
+- Preprocessing compilation time: $preprocess_compilation_time s,
+- Preprocessing execution time: $preprocess_exec_time s,
+- Group by compilation time: $process_compile_time s,
+- Group by execution time: $process_exec_time s.""")
 
-# - Mean execution time after compilation (without GC): $mean_time_no_GC s.
+using Dates
+task_names = vcat(["Library loading"], fill("File loading", 2), fill("Split-apply-combine", 2), fill("String reversal", 2))
+task_types = vcat(["Loading"], repeat(["Compilation", "Execution"], 3))
+task_exec_times = [lib_load_time, file_load_compilation_time, file_load_time, preprocess_compilation_time, preprocess_exec_time, process_compile_time, process_exec_time]
+stats_df = DataFrame(DateTime=fill(Dates.now(), length(task_names)), TaskNames=task_names, TaskTypes=task_types, TaskExecTimes=task_exec_times)
+
+try
+    vcat(CSV.read("logs/log.csv") |> DataFrame, stats_df)
+catch
+    stats_df
+end |> CSV.write("logs/log.csv")

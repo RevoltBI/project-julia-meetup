@@ -1,0 +1,12 @@
+,DateTime,Language,TaskNames,TaskTypes,TaskExecTimes
+0,2018-10-19T15:00:58.659,Julia,Library loading,Loading,0.00042117900000000004
+1,2018-10-19T15:00:58.659,Julia,File loading,Compilation,0.4906251839999998
+2,2018-10-19T15:00:58.659,Julia,File loading,Execution,4.32351712
+3,2018-10-19T15:00:58.659,Julia,Split-apply-combine,Compilation,1.91018632205
+4,2018-10-19T15:00:58.659,Julia,Split-apply-combine,Execution,0.06657425795
+5,2018-10-19T15:00:58.659,Julia,String reversal,Compilation,0.122101959
+6,2018-10-19T15:00:58.659,Julia,String reversal,Execution,0.051765341
+0,2018-10-19T15:01:18.093056,Python,Library loading,Loading,7.510185241699219e-05
+1,2018-10-19T15:01:18.093056,Python,File loading,Execution,0.43869757652282715
+2,2018-10-19T15:01:18.093056,Python,Split-apply-combine,Execution,0.11361854076385498
+3,2018-10-19T15:01:18.093056,Python,String reversal,Execution,0.08040261268615723
