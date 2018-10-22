@@ -1,12 +1,12 @@
 [1] "Libraries loading time: "
    user  system elapsed 
-  0.211   0.010   0.222 
+  0.227   0.006   0.235 
 [1] "Data loading time: "
    user  system elapsed 
-  0.904   0.028   0.937 
+  0.330   0.023   0.357 
 [1] "Group by time: "
    user  system elapsed 
- 0.0536  0.0005  0.0544 
+ 0.0205  0.0008  0.0221 
 [1] "String reverse time: "
    user  system elapsed 
-  1.159   0.006   1.172 
+  1.181   0.024   1.205 

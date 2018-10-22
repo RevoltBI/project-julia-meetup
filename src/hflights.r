@@ -5,7 +5,7 @@ libraries_loading_time <-system.time(
 print(libraries_loading_time)
 
 print("Data loading time: ")
-data_loading_time <- system.time(hflights <- read.csv("data/hflights.csv"))
+suppressMessages(data_loading_time <- system.time(hflights <- read_csv("data/hflights.csv")))
 print(data_loading_time)
 
 fctr.cols <- sapply(hflights, is.factor)

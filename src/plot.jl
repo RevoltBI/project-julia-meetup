@@ -18,6 +18,7 @@ bs = @hose log_df |>
                   ylabel = "Time (s)", xticks = :all,
                   bar_position = :stack, legend=:topright, size=(400,600))
 savefig("img/bitstamp_exec.pdf")
+run(`convert -density 150 img/bitstamp_exec.pdf -quality 90 img/bitstamp_exec.png`)
 
 hfl = @hose log_df |>
 @where(:Dataset .== "HFlights", :TaskTypes .== "Execution") |>
@@ -28,6 +29,7 @@ hfl = @hose log_df |>
                   ylabel = "Time (s)", xticks = :all,
                   bar_position = :stack, legend=:topleft, size=(400,600))
 savefig("img/hflights_exec.pdf")
+run(`convert -density 150 img/hflights_exec.pdf -quality 90 img/hflights_exec.png`)
 
 overhead = @hose log_df |>
 @where(:TaskTypes .!= "Execution") |>
@@ -39,6 +41,7 @@ overhead = @hose log_df |>
                   ylabel = "Time (s)", xticks = :all,
                   bar_position = :stack, legend=:topright, size=(400,600))
 savefig("img/overhead.pdf")
+run(`convert -density 150 img/overhead.pdf -quality 90 img/overhead.png`)
 # execs = @hose log_df |>
 # @where(:TaskTypes .== "Execution") |>
 # @select(:Dataset, :Language, :TaskNames, :TaskTypes, :TaskExecTimes) |>

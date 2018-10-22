@@ -1,12 +1,12 @@
 [1] "Libraries loading time: "
    user  system elapsed 
-  0.604   0.039   0.713 
+  0.274   0.018   0.402 
 [1] "Data loading time: "
    user  system elapsed 
-  5.899   0.215   6.114 
+  5.904   0.253   6.165 
 [1] "Preprocessing time: "
    user  system elapsed 
-  1.202   0.128   1.332 
+  1.474   0.153   1.627 
 [1] "Processing time: "
    user  system elapsed 
- 0.1137  0.0000  0.1138 
+ 0.1137  0.0001  0.1138 

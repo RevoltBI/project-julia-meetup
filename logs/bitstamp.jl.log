@@ -1,8 +1,8 @@
 Stats:
-- Libraries loading time: 13.452071244 s,
-- File loading compilation time: 7.125871658000001 s,
-- File loading time: 2.910459689 s,
-- Preprocessing compilation time: 0.35497996800000003 s,
-- Preprocessing execution time: 0.094752725 s,
-- Group by compilation time: 3.9277031656999997 s,
-- Group by execution time: 0.3112197783 s.
+- Libraries loading time: 14.766193462 s,
+- File loading compilation time: 7.837858024000001 s,
+- File loading time: 3.152446708 s,
+- Preprocessing compilation time: 0.400795366 s,
+- Preprocessing execution time: 0.097434157 s,
+- Group by compilation time: 4.6531187831 s,
+- Group by execution time: 0.40755488089999997 s.

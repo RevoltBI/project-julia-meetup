@@ -5,3 +5,5 @@ julia src/hflights.jl > logs/hflights.jl.log
 python3 src/bitstamp.py > logs/bitstamp.py.log
 Rscript src/bitstamp.r > logs/bitstamp.r.log
 julia src/bitstamp.jl > logs/bitstamp.jl.log
+
+julia src/plot.jl
