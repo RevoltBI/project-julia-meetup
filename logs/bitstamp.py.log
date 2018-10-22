@@ -1,3 +1,4 @@
-Library loading time: 0.3224642276763916 s.
-Data loading time: 2.8174614906311035 s.
-Mean group by execution time: 0.7452764272689819 s.
+Libraries loading time: 0.5688567161560059 s.
+File loading time: 3.3661515712738037 s.
+Preprocessing time: 18.141056537628174 s.
+Processing time: 0.9317504644393921 s.

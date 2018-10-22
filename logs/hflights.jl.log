@@ -1,8 +1,8 @@
 Stats:
-- Libraries loading time: 18.061459865 s,
-- File loading compilation time: 2.819842405 s,
-- File loading time: 0.711398128 s,
-- Group by compilation time: 4.352970236 s,
-- Group by execution time: 0.046168098799999994 s,
-- String reversal compilation time: 0.185330121 s,
-- String reversal execution time: 0.060438342 s.
+- Libraries loading time: 13.51377092 s,
+- File loading compilation time: 7.437316495000001 s,
+- File loading time: 0.569180928 s,
+- Group by compilation time: 4.9884033293 s,
+- Group by execution time: 0.0504639637 s,
+- String reversal compilation time: 0.147448735 s,
+- String reversal execution time: 0.06645823 s.

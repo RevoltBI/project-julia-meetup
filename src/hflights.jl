@@ -6,8 +6,11 @@ lib_load_time = @elapsed using DataFrames, CSV, DataFramesMeta, Hose, Statistics
 # import Base.Meta.@dump
 const dir = @__DIR__
 
-file_load_compilation_time = @elapsed CSV.File("data/hflights.csv", missingstring="NA") |> DataFrame
-file_load_time = @elapsed const hflights = CSV.File("data/hflights.csv", missingstring="NA") |> DataFrame
+optionally_convert_to_df(df::DataFrame) = df
+optionally_convert_to_df(df) = df |> DataFrame
+
+file_load_compilation_time = @elapsed CSV.File("data/hflights.csv", missingstring="NA") |> optionally_convert_to_df
+file_load_time = @elapsed const hflights = CSV.File("data/hflights.csv", missingstring="NA") |> optionally_convert_to_df
 file_load_compilation_time -= file_load_time
 
 # size(hflights)
@@ -71,7 +74,7 @@ using Dates
 task_names = vcat(["Library loading"], fill("File loading", 2), fill("Split-apply-combine", 2), fill("String reversal", 2))
 task_types = vcat(["Loading"], repeat(["Compilation", "Execution"], 3))
 task_exec_times = [lib_load_time, file_load_compilation_time, file_load_time, compile_time, mean_time, string_reversal_compile_time, string_reversal_time]
-stats_df = DataFrame(DateTime=fill(Dates.now(), length(task_names)), Language=fill("Julia", length(task_names)), TaskNames=task_names, TaskTypes=task_types, TaskExecTimes=task_exec_times)
+stats_df = DataFrame(DateTime=fill(Dates.now(), length(task_names)), Language=fill("Julia", length(task_names)), Dataset=fill("HFlights", length(task_names)), TaskNames=task_names, TaskTypes=task_types, TaskExecTimes=task_exec_times)
 
 try
     vcat(CSV.read("logs/log.csv") |> DataFrame, stats_df)

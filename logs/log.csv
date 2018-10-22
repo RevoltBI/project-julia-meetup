@@ -1,12 +1,31 @@
-,DateTime,Language,TaskNames,TaskTypes,TaskExecTimes
-0,2018-10-19T15:00:58.659,Julia,Library loading,Loading,0.00042117900000000004
-1,2018-10-19T15:00:58.659,Julia,File loading,Compilation,0.4906251839999998
-2,2018-10-19T15:00:58.659,Julia,File loading,Execution,4.32351712
-3,2018-10-19T15:00:58.659,Julia,Split-apply-combine,Compilation,1.91018632205
-4,2018-10-19T15:00:58.659,Julia,Split-apply-combine,Execution,0.06657425795
-5,2018-10-19T15:00:58.659,Julia,String reversal,Compilation,0.122101959
-6,2018-10-19T15:00:58.659,Julia,String reversal,Execution,0.051765341
-0,2018-10-19T15:01:18.093056,Python,Library loading,Loading,7.510185241699219e-05
-1,2018-10-19T15:01:18.093056,Python,File loading,Execution,0.43869757652282715
-2,2018-10-19T15:01:18.093056,Python,Split-apply-combine,Execution,0.11361854076385498
-3,2018-10-19T15:01:18.093056,Python,String reversal,Execution,0.08040261268615723
+DateTime,Language,Dataset,TaskNames,TaskTypes,TaskExecTimes
+2018-10-22T13:59:59Z,Python,HFlights,Library loading,Loading,0.610368013381958
+2018-10-22T13:59:59Z,Python,HFlights,File loading,Execution,0.400754451751709
+2018-10-22T13:59:59Z,Python,HFlights,Split-apply-combine,Execution,0.11256039142608644
+2018-10-22T13:59:59Z,Python,HFlights,String reversal,Execution,0.07469892501831055
+2018-10-22T12:00:03Z,R,HFlights,Library loading,Loading,0.22200000000000006
+2018-10-22T12:00:03Z,R,HFlights,File loading,Execution,0.937
+2018-10-22T12:00:03Z,R,HFlights,Split-apply-combine,Execution,0.0544
+2018-10-22T12:00:03Z,R,HFlights,String reversal,Execution,1.1720000000000002
+2018-10-22T14:00:32Z,Julia,HFlights,Library loading,Loading,13.51377092
+2018-10-22T14:00:32Z,Julia,HFlights,File loading,Compilation,7.437316495000001
+2018-10-22T14:00:32Z,Julia,HFlights,File loading,Execution,0.569180928
+2018-10-22T14:00:32Z,Julia,HFlights,Split-apply-combine,Compilation,4.9884033293
+2018-10-22T14:00:32Z,Julia,HFlights,Split-apply-combine,Execution,0.0504639637
+2018-10-22T14:00:32Z,Julia,HFlights,String reversal,Compilation,0.147448735
+2018-10-22T14:00:32Z,Julia,HFlights,String reversal,Execution,0.06645823
+2018-10-22T14:01:11Z,Python,Bitstamp,Library loading,Loading,0.5688567161560059
+2018-10-22T14:01:11Z,Python,Bitstamp,File loading,Execution,3.3661515712738037
+2018-10-22T14:01:11Z,Python,Bitstamp,Split-apply-combine,Execution,18.141056537628174
+2018-10-22T14:01:11Z,Python,Bitstamp,String reversal,Execution,0.9317504644393921
+2018-10-22T12:01:22Z,R,Bitstamp,Library loading,Loading,0.713
+2018-10-22T12:01:22Z,R,Bitstamp,File loading,Execution,6.114
+2018-10-22T12:01:22Z,R,Bitstamp,Preprocessing,Execution,1.3319999999999999
+2018-10-22T12:01:22Z,R,Bitstamp,Processing,Execution,0.11379999999999998
+2018-10-22T14:01:58.003,Julia,Bitstamp,Library loading,Loading,13.452071244
+2018-10-22T14:01:58.003,Julia,Bitstamp,File loading,Compilation,7.125871658000001
+2018-10-22T14:01:58.003,Julia,Bitstamp,File loading,Execution,2.910459689
+2018-10-22T14:01:58.003,Julia,Bitstamp,Preprocessing,Compilation,0.35497996800000003
+2018-10-22T14:01:58.003,Julia,Bitstamp,Preprocessing,Execution,0.094752725
+2018-10-22T14:01:58.003,Julia,Bitstamp,Processing,Compilation,3.9277031656999997
+2018-10-22T14:01:58.003,Julia,Bitstamp,Processing,Execution,0.3112197783
