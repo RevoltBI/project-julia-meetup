@@ -27,7 +27,7 @@ for i in range(N):
 exec_time = (time.time() - start_time) / N
 print("Processing time: %s s." % exec_time)
 
-task_names = ["Library loading"] + ["File loading"] + ["Split-apply-combine"] + ["String reversal"]
+task_names = ["Library loading"] + ["File loading"] + ["Preprocessing"] + ["Processing"]
 task_types = ["Loading"] + ["Execution"] * 3
 task_exec_times = [lib_load_time, file_load_time, preprocess_exec_time, exec_time]
 new_df = pd.DataFrame({"DateTime":[datetime.now().isoformat()]*len(task_names), "Language":["Python"]*len(task_names), "Dataset":["Bitstamp"]*len(task_names), "TaskNames":task_names, "TaskTypes":task_types, "TaskExecTimes":task_exec_times})
