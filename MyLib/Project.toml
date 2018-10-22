@@ -1,0 +1,6 @@
+authors = ["František Navrkal <frantisek@revolt.bi>"]
+name = "MyLib"
+uuid = "4338c754-d61b-11e8-0169-dfb6a503bd1e"
+version = "0.1.0"
+
+[deps]

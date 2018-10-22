@@ -1,0 +1,6 @@
+authors = ["František Navrkal <frantisek@revolt.bi>"]
+name = "MyLibPrecomp"
+uuid = "f9cfdc5a-d61b-11e8-22d7-b5df3b9d1e7d"
+version = "0.1.0"
+
+[deps]
