@@ -2,7 +2,6 @@ import time
 start_time = time.time()
 from datetime import datetime
 import pandas as pd
-from dfply import *
 lib_load_time = time.time() - start_time
 print("Libraries loading time: %s s." % lib_load_time)
 
@@ -14,16 +13,13 @@ print("File loading time: %s s." % file_load_time)
 
 start_time = time.time()
 bitstamp['Datetime'] = pd.to_datetime(bitstamp['Timestamp'], unit='s')
-bitstamp['YearMonth'] = bitstamp['Datetime'].map(lambda x: x.strftime('%Y-%m'))
 preprocess_exec_time = time.time() - start_time
 print("Preprocessing time: %s s." % preprocess_exec_time)
 
 N = 10
 start_time = time.time()
 for i in range(N):
-    (bitstamp >>
-        group_by(X.YearMonth) >>
-        summarize(AvgClose = mean(X.Close), MaxHigh = colmax(X.High)))
+    df = bitstamp.groupby([bitstamp.Datetime.dt.year, bitstamp.Datetime.dt.month]).agg({'Close': 'mean', 'High': 'max'})
 exec_time = (time.time() - start_time) / N
 print("Processing time: %s s." % exec_time)
 
